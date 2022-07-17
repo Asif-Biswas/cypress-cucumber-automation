@@ -16,3 +16,10 @@ jobs:
         run: npm install       
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        with:
+          record: true
+          parallel: true
+          group: 'Actions example'
+        env:          
+          CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
